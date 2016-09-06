@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace ShoppingCart
+namespace ShoppingApp
 {
     public class RouteConfig
     {
