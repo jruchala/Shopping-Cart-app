@@ -26,5 +26,10 @@ namespace ShoppingCart.Controllers
 
             return View();
         }
+
+        public ActionResult Single()
+        {
+            return View();
+        }
     }
 }
