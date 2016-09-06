@@ -31,5 +31,25 @@ namespace ShoppingCart.Controllers
         {
             return View();
         }
+
+        public ActionResult Products()
+        {
+            return View();
+        }
+
+        public ActionResult Typo()
+        {
+            return View();
+        }
+
+        public ActionResult Account()
+        {
+            return View();
+        }
+
+        public ActionResult Checkout()
+        {
+            return View();
+        }
     }
 }

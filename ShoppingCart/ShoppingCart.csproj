@@ -249,9 +249,9 @@
     <Content Include="Scripts\responsiveslides.min.js" />
     <Content Include="Scripts\simpleCart.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Views\Home\account.html" />
-    <Content Include="Views\Home\checkout.html" />
-    <Content Include="Views\Home\contact.html" />
+    <None Include="Views\Home\Account.cshtml" />
+    <None Include="Views\Home\Checkout.cshtml" />
+    <None Include="Views\Home\Contact.cshtml" />
     <None Include="Views\Home\Index.cshtml" />
     <Content Include="Content\images\11.png" />
     <Content Include="Content\images\abt-1.jpg" />
@@ -286,10 +286,10 @@
     <Content Include="Content\images\search.png" />
     <Content Include="Content\images\star.png" />
     <Content Include="Content\images\tick.png" />
-    <Content Include="Views\Home\products.html" />
+    <None Include="Views\Home\Products.cshtml" />
     <Content Include="Views\Home\register.html" />
     <None Include="Views\Home\Single.cshtml" />
-    <Content Include="Views\Home\typo.html" />
+    <None Include="Views\Home\Typo.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -302,7 +302,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
+    <None Include="Views\Home\Contact.cshtml_old" />
     <None Include="Views\Home\Index.cshtml_old" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
