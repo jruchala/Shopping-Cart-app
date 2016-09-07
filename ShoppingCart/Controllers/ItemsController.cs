@@ -13,7 +13,7 @@ namespace ShoppingApp.Controllers
     public class ItemsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-
+        [Authorize]
         // GET: Items
         public ActionResult Index()
         {
@@ -21,6 +21,7 @@ namespace ShoppingApp.Controllers
         }
 
         // GET: Items/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
