@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace ShoppingApp.Models
 {
@@ -17,7 +18,7 @@ namespace ShoppingApp.Models
 
         [DataType(DataType.Upload)]
         public string MediaUrl { get; set; }
-        
+        [AllowHtml]
         public string Description { get; set; }
         [DataType(DataType.Date)]
         public DateTimeOffset Created { get; set; }

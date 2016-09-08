@@ -44,12 +44,12 @@
             @Html.DisplayFor(modelItem => item.Price)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.MediaUrl)
+            @*Html.DisplayFor(modelItem => item.MediaUrl)*@
             <img src="@Url.Content(item.MediaUrl)" />
 
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Description)
+            @Html.Raw(item.Description)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Created)
