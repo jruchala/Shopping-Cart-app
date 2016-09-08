@@ -7,12 +7,14 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ShoppingApp.Models;
+using System.IO;
 
 namespace ShoppingApp.Controllers
 {
     public class ItemsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        private ImageUploadValidator validator = new ImageUploadValidator();
         [Authorize]
         // GET: Items
         public ActionResult Index()
@@ -49,10 +51,17 @@ namespace ShoppingApp.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
-        public ActionResult Create([Bind(Include = "Id,Name,Price,MediaUrl,Description,Created,Updated")] Item item)
+        public ActionResult Create([Bind(Include = "Id,Name,Price,MediaUrl,Description,Created,Updated")] Item item, HttpPostedFileBase Image)
         {
             if (ModelState.IsValid)
             {
+                if (validator.IsWebFriendlyImage(Image))
+                {
+                    var fileName = Path.GetFileName(Image.FileName);
+                    Image.SaveAs(Path.Combine(Server.MapPath("~/Content/images/uploads/"), fileName));
+                    item.MediaUrl = "~/Content/images/uploads/" + fileName;
+
+                }
                 db.Items.Add(item);
                 db.SaveChanges();
                 return RedirectToAction("Index");
