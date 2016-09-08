@@ -51,5 +51,13 @@ namespace ShoppingApp.Controllers
         {
             return View();
         }
+        public ActionResult Register()
+        {
+            return View();
+        }
+        public ActionResult ResponsiveSlideTest()
+        {
+            return View();
+        }
     }
 }

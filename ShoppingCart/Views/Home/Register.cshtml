@@ -1,0 +1,83 @@
+﻿
+<!--A Design by W3layouts 
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Viewbag.Title = "Register";
+}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Luxury Watches A Ecommerce Category Flat Bootstarp Resposive Website Template | Register :: w3layouts</title>
+<link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!--jQuery(necessary for Bootstrap's JavaScript plugins)-->
+<script src="~/Scripts/jquery-1.11.0.min.js"></script>
+<!--Custom Theme files-->
+<!--theme-style-->
+<link href="~/Content/style.css" rel="stylesheet" type="text/css" media="all" />	
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Luxury Watches Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>	
+<!--start-menu-->
+<script src="~/Scripts/simpleCart.min.js"> </script>
+<link href="~/Content/memenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="~/Scripts/memenu.js"></script>
+<script>$(document).ready(function(){$(".memenu").memenu();});</script>	
+<!--dropdown-->
+<script src="~/Scripts/jquery.easydropdown.js"></script>			
+</head>
+<body> 
+
+	<!--start-breadcrumbs-->
+	<div class="breadcrumbs">
+		<div class="container">
+			<div class="breadcrumbs-main">
+				<ol class="breadcrumb">
+					<li><a href="@Url.Action("Index", "Home")">Home</a></li>
+					<li class="active">Register</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+	<!--end-breadcrumbs-->
+	<!--register-starts-->
+	<div class="register">
+		<div class="container">
+			<div class="register-top heading">
+				<h2>REGISTER</h2>
+			</div>
+			<div class="register-main">
+				<div class="col-md-6 account-left">
+					<input placeholder="First name" type="text" tabindex="1" required>
+						<input placeholder="Last name" type="text" tabindex="2" required>
+						<input placeholder="Email address" type="text" tabindex="3" required>
+						<input placeholder="Mobile" type="text" tabindex="3" required>
+						<ul>
+							<li><label class="radio left"><input type="radio" name="radio" checked=""><i></i>Male</label></li>
+							<li><label class="radio"><input type="radio" name="radio"><i></i>Female</label></li>
+							<div class="clearfix"></div>
+						</ul>
+				</div>
+				<div class="col-md-6 account-left">
+					<input placeholder="Password" type="password" tabindex="4" required>
+						<input placeholder="Retype password" type="password" tabindex="4" required>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="address submit">
+							<input type="submit" value="Submit">
+						</div>
+		</div>
+	</div>
+	<!--register-end-->
+
+
+</body>
+</html>

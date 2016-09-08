@@ -297,7 +297,8 @@
     <Content Include="Content\images\star.png" />
     <Content Include="Content\images\tick.png" />
     <None Include="Views\Home\Products.cshtml" />
-    <Content Include="Views\Home\register.html" />
+    <None Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Home\ResponsiveSlideTest.cshtml" />
     <None Include="Views\Home\Single.cshtml" />
     <None Include="Views\Home\Typo.cshtml" />
     <Content Include="Web.config" />
