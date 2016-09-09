@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -13,8 +14,16 @@ namespace ShoppingApp.Models
         public string State { get; set; }
         public string ZipCode { get; set; }
         public string Country { get; set; }
+
+
+        [DataType(DataType.PhoneNumber)]
         public string Phone { get; set; }
+
+        [DataType(DataType.Currency)]
+        [DisplayFormat(DataFormatString = "{0:C}")]
         public decimal Total { get; set; }
+
+        [DataType(DataType.Date)]
         public DateTime OrderDate { get; set; }
         public string CustomerId { get; set; }
 

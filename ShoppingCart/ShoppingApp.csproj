@@ -432,6 +432,7 @@
     <None Include="Views\Home\Account.cshtml" />
     <None Include="Views\Home\Checkout.cshtml" />
     <None Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\EmmetTest.cshtml" />
     <None Include="Views\Home\Index.cshtml" />
     <Content Include="Content\images\11.png" />
     <Content Include="Content\images\abt-1.jpg" />
