@@ -31,10 +31,12 @@
 
         <dt>
             @Html.DisplayNameFor(model => model.MediaUrl)
+            
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.MediaUrl)
+            @*@Html.DisplayFor(model => model.MediaUrl)*@
+            <img src="@Url.Content(Model.MediaUrl)"/>
         </dd>
 
         <dt>

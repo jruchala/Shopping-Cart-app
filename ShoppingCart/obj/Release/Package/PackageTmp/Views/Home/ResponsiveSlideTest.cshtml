@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "ResponsiveSlideTest";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Responsive Slide Test</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="~/Scripts/responsiveslides.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="~/Content/style.css" />
+</head>
+<body>
+<h2>ResponsiveSlideTest</h2>
+
+    <ul class="rslides">
+        <li><img src="~/Content/images/bnr-1.jpg" alt=""></li>
+        <li><img src="~/Content/images/bnr-2.jpg" alt=""></li>
+        <li><img src="~/Content/images/bnr-3.jpg" alt=""></li>
+    </ul>
+    <script>
+        $(function () {
+            // Slideshow 4
+            $(".rslides").responsiveSlides({
+                auto: true,
+                pager: true,
+                nav: true,
+                speed: 500,
+            //    namespace: "callbacks",
+            //    before: function () {
+            //        $('.events').append("<li>before event fired.</li>");
+            //    },
+            //    after: function () {
+            //        $('.events').append("<li>after event fired.</li>");
+            //    }
+            });
+
+        });
+    </script>
+</body>
+</html>
+
+
+

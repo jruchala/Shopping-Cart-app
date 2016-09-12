@@ -240,6 +240,7 @@
     <Content Include="fonts\Lora-Regular.ttf" />
     <Content Include="fonts\Muli-Regular.ttf" />
     <Content Include="fonts\Philosopher-Regular.ttf" />
+    <None Include="Properties\PublishProfiles\jruchala-shoppingcart.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\imagezoom.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

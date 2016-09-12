@@ -39,7 +39,7 @@ namespace ShoppingApp.Controllers
         // GET: Orders/Create
         public ActionResult Create()
         {
-           // ViewBag.CustomerId = new SelectList(db.ApplicationUsers, "Id", "FirstName");
+           //  ViewBag.CustomerId = new SelectList(db.ApplicationUsers, "Id", "FirstName");
             return View();
         }
 
