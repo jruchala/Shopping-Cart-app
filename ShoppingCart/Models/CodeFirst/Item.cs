@@ -15,7 +15,7 @@ namespace ShoppingApp.Models
         [DataType(DataType.Currency)]
         [DisplayFormat(DataFormatString ="{0:C}")]
         public decimal Price { get; set; }
-
+        [Display(Name="Image")]
         [DataType(DataType.Upload)]
         public string MediaUrl { get; set; }
         [AllowHtml]
