@@ -49,7 +49,7 @@ namespace ShoppingApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,ItemId,Count,Created")] ShoppingCart shoppingCart)
+        public ActionResult Create([Bind(Include = "Id,ItemId,Count,Created,CustomerId")] ShoppingCart shoppingCart)
         {
             if (ModelState.IsValid)
             {
@@ -68,6 +68,7 @@ namespace ShoppingApp.Controllers
         {
 
             // is there a cart yet?
+            var user = db.Users.Find(User.Identity.GetUserId());
             // var cart = db.ShoppingCarts.SingleOrDefault(c => c.Id == ???)
 
 
@@ -77,6 +78,7 @@ namespace ShoppingApp.Controllers
             ShoppingCart cart = new ShoppingCart();
             cart.ItemId = id;
             cart.Count++;
+            cart.CustomerId = user.Id;
             cart.Created = DateTime.Now;
             db.ShoppingCarts.Add(cart);
 
