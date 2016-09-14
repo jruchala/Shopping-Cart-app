@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ShoppingApp.Models;
+using Microsoft.AspNet.Identity;
 
 namespace ShoppingApp.Controllers
 {
@@ -65,12 +66,22 @@ namespace ShoppingApp.Controllers
 
         public  ActionResult AddToCart(int id)
         {
+
+            // is there a cart yet?
+            // var cart = db.ShoppingCarts.SingleOrDefault(c => c.Id == ???)
+
+
+
+            // if no cart exists for current user, create one and add item to it.
+            // if (cart == null) {}
             ShoppingCart cart = new ShoppingCart();
-            db.ShoppingCarts.Add(cart);
             cart.ItemId = id;
             cart.Count++;
             cart.Created = DateTime.Now;
+            db.ShoppingCarts.Add(cart);
+
             db.SaveChanges();
+            
 
             return RedirectToAction("Details", "Items", new { id = id });
             
