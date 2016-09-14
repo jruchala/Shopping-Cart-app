@@ -61,6 +61,23 @@ namespace ShoppingApp.Controllers
             return View(shoppingCart);
         }
 
+        // GET: ShoppingCarts/AddToCart
+
+        public  ActionResult AddToCart(int id)
+        {
+            ShoppingCart cart = new ShoppingCart();
+            db.ShoppingCarts.Add(cart);
+            cart.ItemId = id;
+            cart.Count++;
+            cart.Created = DateTime.Now;
+            db.SaveChanges();
+
+            return RedirectToAction("Details", "Items", new { id = id });
+            
+
+        }
+
+
         // GET: ShoppingCarts/Edit/5
         public ActionResult Edit(int? id)
         {

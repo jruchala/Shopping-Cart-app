@@ -13,6 +13,7 @@ namespace ShoppingApp.Models
         public int Count { get; set; }
 
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime Created { get; set; }
         public virtual Item Item { get; set; }
 
