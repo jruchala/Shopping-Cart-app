@@ -159,6 +159,6 @@ C:\Users\rucha\OneDrive\Documents\Visual Studio 2015\Projects\ShoppingApp\Shoppi
 C:\Users\rucha\OneDrive\Documents\Visual Studio 2015\Projects\ShoppingApp\ShoppingCart\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\rucha\OneDrive\Documents\Visual Studio 2015\Projects\ShoppingApp\ShoppingCart\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\rucha\OneDrive\Documents\Visual Studio 2015\Projects\ShoppingApp\ShoppingCart\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\rucha\OneDrive\Documents\Visual Studio 2015\Projects\ShoppingApp\ShoppingCart\obj\Debug\ShoppingApp.csprojResolveAssemblyReference.cache
 C:\Users\rucha\OneDrive\Documents\Visual Studio 2015\Projects\ShoppingApp\ShoppingCart\obj\Debug\ShoppingCart.dll
 C:\Users\rucha\OneDrive\Documents\Visual Studio 2015\Projects\ShoppingApp\ShoppingCart\obj\Debug\ShoppingCart.pdb
+C:\Users\rucha\OneDrive\Documents\Visual Studio 2015\Projects\ShoppingApp\ShoppingCart\obj\Debug\ShoppingApp.csprojResolveAssemblyReference.cache

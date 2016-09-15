@@ -18,7 +18,12 @@ namespace ShoppingApp.Controllers
         // GET: ShoppingCarts
         public ActionResult Index()
         {
-            var shoppingCarts = db.ShoppingCarts.Include(s => s.Item);
+            // original code, which displays all carts:
+            // var shoppingCarts = db.ShoppingCarts.Include(s => s.Item);
+
+            // get the current user and display only carts created by user
+            var user = db.Users.Find(User.Identity.GetUserId());
+            var shoppingCarts = db.ShoppingCarts.Where(s => s.CustomerId == user.Id);
             return View(shoppingCarts.ToList());
         }
 
@@ -67,25 +72,35 @@ namespace ShoppingApp.Controllers
         public  ActionResult AddToCart(int id)
         {
 
-            // is there a cart yet?
+            // is there a cart for the user, and does it contain the item?
             var user = db.Users.Find(User.Identity.GetUserId());
-            // var cart = db.ShoppingCarts.SingleOrDefault(c => c.Id == ???)
+            var cart = db.ShoppingCarts.SingleOrDefault(c => c.CustomerId == user.Id 
+                && c.ItemId == id);
 
-
-
-            // if no cart exists for current user, create one and add item to it.
-            // if (cart == null) {}
-            ShoppingCart cart = new ShoppingCart();
-            cart.ItemId = id;
-            cart.Count++;
-            cart.CustomerId = user.Id;
-            cart.Created = DateTime.Now;
-            db.ShoppingCarts.Add(cart);
-
-            db.SaveChanges();
+            // if no cart exists for current user, or there is no cart with the current itemID,
+            // create one and add item to it.
+            if ( cart == null )
+            {
+                cart = new ShoppingCart();
+                cart.ItemId = id;
+                cart.Count++;
+                cart.CustomerId = user.Id;
+                cart.Created = DateTime.Now;
+                db.ShoppingCarts.Add(cart);
+            }
+            // if there is a cart with item for the user, increment count
+            else 
+            {
+                cart.Count++;
+            }
             
 
+
+            // save changes and return to details page
+            db.SaveChanges();
             return RedirectToAction("Details", "Items", new { id = id });
+            
+
             
 
         }
