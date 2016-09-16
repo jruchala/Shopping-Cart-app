@@ -93,16 +93,9 @@ namespace ShoppingApp.Controllers
             {
                 cart.Count++;
             }
-            
-
-
             // save changes and return to details page
             db.SaveChanges();
             return RedirectToAction("Details", "Items", new { id = id });
-            
-
-            
-
         }
 
 
@@ -163,6 +156,23 @@ namespace ShoppingApp.Controllers
             db.ShoppingCarts.Remove(shoppingCart);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public PartialViewResult CartTotal()
+        {
+            var user = db.Users.Find(User.Identity.GetUserId());
+            var shoppingCarts = db.ShoppingCarts.Where(s => s.CustomerId == user.Id).ToList();
+            var shopCount = 0;
+            decimal shopTotal = 0.00M;
+
+            foreach(var cart in shoppingCarts)
+            {
+                shopCount += cart.Count;
+                var cartItem = db.Items.FirstOrDefault(t => t.Id == cart.ItemId);
+                shopTotal += cartItem.Price * cart.Count;
+            }
+
+            return PartialView("~/Views/Shared/_Total.cshtml");
         }
 
         protected override void Dispose(bool disposing)
