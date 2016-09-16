@@ -1,0 +1,17 @@
+﻿<div id="cartWidget">
+    <div class="cart box_1">
+        <a href="@Url.Action("Index", "ShoppingCarts")">
+            <div class="total">
+                <span class="simpleCart_total"></span>
+            </div>
+            <img src="~/Content/images/cart-1.png" />
+
+        </a>
+        
+        <p>Total: @ViewBag.Total</p>
+        <p>Item(s): @ViewBag.Count</p>
+        <p><a href="@Url.Action("DeleteAll", "ShoppingCarts")" class="simpleCart_empty">Empty Cart</a></p>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+
