@@ -9,15 +9,22 @@ namespace ShoppingApp.Models
     public class ShoppingCart
     {
         public int Id { get; set; }
+
+        // foreign key
         public int ItemId { get; set;}
 
+        // foreign key
         public string CustomerId { get; set; }
         public int Count { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime Created { get; set; }
+
+        // navigation property --connection to Item table
         public virtual Item Item { get; set; }
+
+        // navigation poperty -- connection to Customer table
         public virtual ApplicationUser Customer { get; set; }
 
         

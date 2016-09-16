@@ -71,7 +71,6 @@ namespace ShoppingApp.Controllers
 
         public  ActionResult AddToCart(int id)
         {
-
             // is there a cart for the user, and does it contain the item?
             var user = db.Users.Find(User.Identity.GetUserId());
             var cart = db.ShoppingCarts.SingleOrDefault(c => c.CustomerId == user.Id 
@@ -83,7 +82,7 @@ namespace ShoppingApp.Controllers
             {
                 cart = new ShoppingCart();
                 cart.ItemId = id;
-                cart.Count++;
+                cart.Count = 1;
                 cart.CustomerId = user.Id;
                 cart.Created = DateTime.Now;
                 db.ShoppingCarts.Add(cart);
@@ -159,6 +158,21 @@ namespace ShoppingApp.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult DeleteAll()
+        {
+            var user = db.Users.Find(User.Identity.GetUserId());
+            var shoppingCarts = db.ShoppingCarts.Where(s => s.CustomerId == user.Id).ToList();
+
+            if (shoppingCarts != null)
+            {
+                foreach(var cart in shoppingCarts)
+                {
+                    db.ShoppingCarts.Remove(cart);
+                }
+                db.SaveChanges();
+            }
+            return RedirectToAction("Index", "ShoppingCarts");
+        }
         public PartialViewResult CartTotal()
         {
             var user = db.Users.Find(User.Identity.GetUserId());
@@ -175,7 +189,7 @@ namespace ShoppingApp.Controllers
 
             ViewBag.Total = shopTotal;
             ViewBag.Count = shopCount;
-            return PartialView("~/Views/Shared/_Layout.cshtml", ViewBag.Total, ViewBag.Count);
+            return PartialView("~/Views/Shared/_Layout.cshtml");
         }
 
         protected override void Dispose(bool disposing)
