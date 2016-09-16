@@ -95,6 +95,7 @@ namespace ShoppingApp.Controllers
             }
             // save changes and return to details page
             db.SaveChanges();
+            CartTotal();
             return RedirectToAction("Details", "Items", new { id = id });
         }
 
@@ -172,7 +173,9 @@ namespace ShoppingApp.Controllers
                 shopTotal += cartItem.Price * cart.Count;
             }
 
-            return PartialView("~/Views/Shared/_Total.cshtml");
+            ViewBag.Total = shopTotal;
+            ViewBag.Count = shopCount;
+            return PartialView("~/Views/Shared/_Layout.cshtml", ViewBag.Total, ViewBag.Count);
         }
 
         protected override void Dispose(bool disposing)
