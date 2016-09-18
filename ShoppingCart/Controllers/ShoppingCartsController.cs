@@ -176,19 +176,23 @@ namespace ShoppingApp.Controllers
         public PartialViewResult CartTotal()
         {
             var user = db.Users.Find(User.Identity.GetUserId());
-            var shoppingCarts = db.ShoppingCarts.Where(s => s.CustomerId == user.Id).ToList();
-            var shopCount = 0;
-            decimal shopTotal = 0.00M;
+            if (user != null)
+            { 
+                var shoppingCarts = db.ShoppingCarts.Where(s => s.CustomerId == user.Id).ToList();
+                var shopCount = 0;
+                decimal shopTotal = 0.00M;
 
-            foreach(var cart in shoppingCarts)
-            {
-                shopCount += cart.Count;
-                var cartItem = db.Items.FirstOrDefault(t => t.Id == cart.ItemId);
-                shopTotal += cartItem.Price * cart.Count;
+                foreach(var cart in shoppingCarts)
+                {
+                    shopCount += cart.Count;
+                    var cartItem = db.Items.FirstOrDefault(t => t.Id == cart.ItemId);
+                    shopTotal += cartItem.Price * cart.Count;
+                }
+
+                ViewBag.Total = shopTotal;
+                ViewBag.Count = shopCount;
+               
             }
-
-            ViewBag.Total = shopTotal;
-            ViewBag.Count = shopCount;
             return PartialView("~/Views/Shared/_CartTotal.cshtml");
         }
 
