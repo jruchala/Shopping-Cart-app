@@ -530,6 +530,7 @@
     <Content Include="Views\ShoppingCarts\Index.cshtml" />
     <Content Include="Views\Shared\_Total.cshtml" />
     <Content Include="Views\Shared\_CartTotal.cshtml" />
+    <Content Include="Views\Shared\_AuthLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
