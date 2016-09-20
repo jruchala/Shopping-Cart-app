@@ -55,7 +55,19 @@ namespace ShoppingApp.Controllers
             {
                 var user = db.Users.Find(User.Identity.GetUserId());
                 order.CustomerId = user.Id;
+                
+                var shoppingCarts = db.ShoppingCarts.Where(s => s.CustomerId == user.Id).ToList();
+                var shopCount = 0;
+                decimal shopTotal = 0.00M;
 
+                foreach (var cart in shoppingCarts)
+                {
+                    shopCount += cart.Count;
+                    var cartItem = db.Items.FirstOrDefault(t => t.Id == cart.ItemId);
+                    shopTotal += cartItem.Price * cart.Count;
+                }
+
+                order.Total = shopTotal;
                 order.OrderDate = DateTime.Now;
                 db.Orders.Add(order);
                 db.SaveChanges();
