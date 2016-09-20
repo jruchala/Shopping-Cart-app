@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
 
-    
+
     <!--jQuery(necessary for Bootstrap's JavaScript plugins)-->
 
     <script src="~/Scripts/jquery-1.11.0.min.js"></script>
@@ -27,7 +27,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="~/Scripts/memenu.js"></script>
     <script>$(document).ready(function(){$(".memenu").memenu();});</script>
     <!--dropdown-->
-    <script src="~/Scripts/jquery.easydropdown.js"></script>		
+    <script src="~/Scripts/jquery.easydropdown.js"></script>
     <script src="~/Scripts/responsiveslides.min.js"></script>
 
 </head>
@@ -43,10 +43,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="col-md-2">
 
-                    
+
                 </div>
                 <div class="col-md-6 top-header-left">
-                    @{ Html.RenderAction("CartTotal", "ShoppingCarts");}
+
+                    <div id="cartWidget">
+                        <div class="cart box_1">
+                            <a href="@Url.Action("Index", "ShoppingCarts")">
+                             
+                                <img src="~/Content/images/cart-1.png" />
+
+                            </a>
+
+                            <p>Total: $ 0.00</p>
+                            <p>Item(s): 0</p>
+                            <p><a href="@Url.Action("DeleteAll", "ShoppingCarts")" class="simpleCart_empty">Empty Cart</a></p>
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -294,3 +308,4 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 </body>
 </html>
+

@@ -57,7 +57,7 @@ namespace ShoppingApp.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CustomerId = new SelectList(db.ApplicationUsers, "Id", "FirstName", order.CustomerId);
+            ViewBag.CustomerId = new SelectList(db.Users, "Id", "FirstName", order.CustomerId);
             return View(order);
         }
 
@@ -73,7 +73,7 @@ namespace ShoppingApp.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CustomerId = new SelectList(db.ApplicationUsers, "Id", "FirstName", order.CustomerId);
+            ViewBag.CustomerId = new SelectList(db.Users, "Id", "FirstName", order.CustomerId);
             return View(order);
         }
 
@@ -90,7 +90,7 @@ namespace ShoppingApp.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CustomerId = new SelectList(db.ApplicationUsers, "Id", "FirstName", order.CustomerId);
+            ViewBag.CustomerId = new SelectList(db.Users, "Id", "FirstName", order.CustomerId);
             return View(order);
         }
 

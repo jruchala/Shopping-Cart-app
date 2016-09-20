@@ -10,7 +10,10 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @if (User.IsInRole("Admin"))
+    {
+        @Html.ActionLink("Create New", "Create")
+    }
 </p>
 <table class="table">
     <tr>
@@ -35,41 +38,42 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @*Html.DisplayFor(modelItem => item.MediaUrl)*@
-            <img src="@Url.Content(item.MediaUrl)" />
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @*Html.DisplayFor(modelItem => item.MediaUrl)*@
+                <img src="@Url.Content(item.MediaUrl)" />
 
-        </td>
-        <td>
-            @Html.Raw(item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Created)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Updated)
-        </td>
-        <td>
-            @if (User.IsInRole("Admin"))
-            {
-                <text>@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |</text>
-            }
+            </td>
+            <td>
+                @Html.Raw(item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Created)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Updated)
+            </td>
+            <td>
+                @if (User.IsInRole("Admin"))
+                {
+                    <text>@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |</text>
+                }
 
-            @Html.ActionLink("Details", "Details", new { id = item.Id })
-            @if (User.IsInRole("Admin"))
-            {
-                <text>| @Html.ActionLink("Delete", "Delete", new { id = item.Id })</text>
-            }
-        </td>
-    </tr>
-}
+                @Html.ActionLink("Details", "Details", new { id = item.Id })
+                @if (User.IsInRole("Admin"))
+                {
+                    <text>| @Html.ActionLink("Delete", "Delete", new { id = item.Id })</text>
+                }
+            </td>
+        </tr>
+    }
 
 </table>

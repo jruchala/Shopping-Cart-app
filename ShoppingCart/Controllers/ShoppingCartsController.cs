@@ -120,15 +120,18 @@ namespace ShoppingApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,ItemId,Count,Created")] ShoppingCart shoppingCart)
+        public ActionResult Edit([Bind(Include = "Id,Count,Created,ItemId")] ShoppingCart shoppingCart)
         {
             if (ModelState.IsValid)
             {
+                var user = db.Users.Find(User.Identity.GetUserId());
+
+                
+                shoppingCart.CustomerId = user.Id;
                 db.Entry(shoppingCart).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ItemId = new SelectList(db.Items, "Id", "Name", shoppingCart.ItemId);
             return View(shoppingCart);
         }
 
