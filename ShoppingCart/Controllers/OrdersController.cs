@@ -71,7 +71,7 @@ namespace ShoppingApp.Controllers
                 order.OrderDate = DateTime.Now;
                 db.Orders.Add(order);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", "Orders", new {id = order.Id });
             }
 
             ViewBag.CustomerId = new SelectList(db.Users, "Id", "FirstName", order.CustomerId);
@@ -137,6 +137,23 @@ namespace ShoppingApp.Controllers
             return RedirectToAction("Index");
         }
 
+        // GET: Orders/Confirm
+        public ActionResult Confirm()
+        {
+            var user = db.Users.Find(User.Identity.GetUserId());
+            var shoppingCarts = db.ShoppingCarts.Where(s => s.CustomerId == user.Id).ToList();
+
+            if (shoppingCarts != null)
+            {
+                foreach (var cart in shoppingCarts)
+                {
+                    db.ShoppingCarts.Remove(cart);
+                }
+                db.SaveChanges();
+            }
+
+            return View();
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

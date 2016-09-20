@@ -534,6 +534,7 @@
     <Content Include="Views\ShoppingCarts\Index.cshtml" />
     <Content Include="Views\Shared\_CartTotal.cshtml" />
     <Content Include="Views\Shared\_AuthLayout.cshtml" />
+    <Content Include="Views\Orders\Confirm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
