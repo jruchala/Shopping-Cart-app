@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ShoppingApp.Models;
+using Microsoft.AspNet.Identity;
 
 namespace ShoppingApp.Controllers
 {
@@ -52,6 +53,10 @@ namespace ShoppingApp.Controllers
         {
             if (ModelState.IsValid)
             {
+                var user = db.Users.Find(User.Identity.GetUserId());
+                order.CustomerId = user.Id;
+
+                order.OrderDate = DateTime.Now;
                 db.Orders.Add(order);
                 db.SaveChanges();
                 return RedirectToAction("Index");
