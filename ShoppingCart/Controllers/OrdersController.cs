@@ -145,15 +145,26 @@ namespace ShoppingApp.Controllers
         }
 
         // GET: Orders/Confirm
-        public ActionResult Confirm()
+        public ActionResult Confirm(int id)
         {
             var user = db.Users.Find(User.Identity.GetUserId());
             var shoppingCarts = db.ShoppingCarts.Where(s => s.CustomerId == user.Id).ToList();
+            
+            
 
             if (shoppingCarts != null)
             {
                 foreach (var cart in shoppingCarts)
                 {
+                    var orderDetail = new OrderDetail();
+                    
+                    orderDetail.ItemId = cart.ItemId;
+                    orderDetail.Quantity = cart.Count;
+                    orderDetail.UnitPrice = cart.Item.Price;
+                    orderDetail.OrderId = id;
+                    
+
+                    db.OrderDetails.Add(orderDetail);
                     db.ShoppingCarts.Remove(cart);
                 }
                 db.SaveChanges();

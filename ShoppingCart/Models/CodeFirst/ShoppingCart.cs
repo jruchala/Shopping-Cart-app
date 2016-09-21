@@ -16,6 +16,9 @@ namespace ShoppingApp.Models
 
         // foreign key
         public string CustomerId { get; set; }
+
+        [Display(Name = "Quantity")]
+        [Range (0, 999)]
         public int Count { get; set; }
 
     

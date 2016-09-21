@@ -49,11 +49,18 @@ namespace ShoppingApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,OrderId,ItemId,Quantity,UnitPrice")] OrderDetail orderDetail, int id)
+        public ActionResult Create([Bind(Include = "Id,OrderId,ItemId,Quantity,UnitPrice")] OrderDetail orderDetail, int id, int orderId, int itemId, int quantity, decimal unitPrice)
         {
             if (ModelState.IsValid)
             {
                 orderDetail.Id = id;
+                orderDetail.OrderId = orderId;
+                orderDetail.ItemId = itemId;
+                orderDetail.Quantity = quantity;
+                orderDetail.UnitPrice = unitPrice;
+                
+
+
                 db.OrderDetails.Add(orderDetail);
                 db.SaveChanges();
                 return RedirectToAction("Index");
