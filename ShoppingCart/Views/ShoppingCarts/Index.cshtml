@@ -41,12 +41,15 @@
                 @Html.DisplayFor(modelItem => item.Created)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                <p>@Html.ActionLink("Edit", "Edit", new { id = item.Id })</p> 
+                <p>@Html.ActionLink("Details", "Details", new { id = item.Id })</p> 
+                <p>@Html.ActionLink("Delete", "Delete", new { id = item.Id })</p>
             </td>
         </tr>
     }
 
 </table>
-    @Html.ActionLink("Check Out", "Create", "Orders")
+<p>
+    <a href="@Url.Action("Create", "Orders")"><input type="button" class="btn btn-default" value="Check Out"/></a>
+</p>
+    
