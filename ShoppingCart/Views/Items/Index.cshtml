@@ -64,14 +64,18 @@
             <td>
                 @if (User.IsInRole("Admin"))
                 {
-                    <text>@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |</text>
+                     <p><text>@Html.ActionLink("Edit", "Edit", new { id = item.Id })</text></p>
                 }
-
-                @Html.ActionLink("Details", "Details", new { id = item.Id })
+                
+                <p>@Html.ActionLink("Details", "Details", new { id = item.Id })</p>
+                
                 @if (User.IsInRole("Admin"))
                 {
-                    <text>| @Html.ActionLink("Delete", "Delete", new { id = item.Id })</text>
+                     <p><text>@Html.ActionLink("Delete", "Delete", new { id = item.Id })</text></p>
                 }
+                
+                <p>@Html.ActionLink("Add to Cart", "AddToCart", "ShoppingCarts", new { id = item.Id }, "")</p>
+
             </td>
         </tr>
     }

@@ -1,15 +1,18 @@
 ﻿<div id="cartWidget">
     <div class="cart box_1">
         <a href="@Url.Action("Index", "ShoppingCarts")">
-            
+
             <img src="~/Content/images/cart-1.png" />
 
         </a>
-        
-        <p>Total: @(((decimal)ViewBag.Total).ToString("C2"))</p>
+        @{ if (ViewBag.Total != null)
+            {
+                <p>Total: @(((decimal)ViewBag.Total).ToString("C2"))</p>
+            }
+        }
+
         <p>Item(s): @ViewBag.Count</p>
         <p><a href="@Url.Action("DeleteAll", "ShoppingCarts")" class="simpleCart_empty">Empty Cart</a></p>
         <div class="clearfix"> </div>
     </div>
 </div>
-
