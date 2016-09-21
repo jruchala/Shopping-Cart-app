@@ -6,7 +6,7 @@
 
         </a>
         
-        <p>Total: @ViewBag.Total</p>
+        <p>Total: @(((decimal)ViewBag.Total).ToString("C2"))</p>
         <p>Item(s): @ViewBag.Count</p>
         <p><a href="@Url.Action("DeleteAll", "ShoppingCarts")" class="simpleCart_empty">Empty Cart</a></p>
         <div class="clearfix"> </div>
