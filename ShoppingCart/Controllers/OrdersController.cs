@@ -52,7 +52,7 @@ namespace ShoppingApp.Controllers
         [HttpPost]
         [Authorize]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Address,City,State,ZipCode,Country,Phone,Total,OrderDate,CustomerId")] Order order)
+        public ActionResult Create([Bind(Include = "Id,Name,Address,City,State,ZipCode,Country,Phone,Total,OrderDate,CustomerId")] Order order)
         {
             if (ModelState.IsValid)
             {
@@ -104,10 +104,11 @@ namespace ShoppingApp.Controllers
         [HttpPost]
         [Authorize]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Address,City,State,ZipCode,Country,Phone,Total,OrderDate,CustomerId")] Order order)
+        public ActionResult Edit([Bind(Include = "Id,Name,Address,City,State,ZipCode,Country,Phone,Total,OrderDate,CustomerId")] Order order)
         {
             if (ModelState.IsValid)
             {
+                order.OrderDate = DateTime.Now;
                 db.Entry(order).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
