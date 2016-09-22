@@ -196,9 +196,15 @@ namespace ShoppingApp.Controllers
                 ViewBag.Count = shopCount;
                
             }
+            else
+            {
+                ViewBag.Total = 0;
+                ViewBag.Count = 0;
+            }
             return PartialView("~/Views/Shared/_CartTotal.cshtml");
         }
 
+      
         protected override void Dispose(bool disposing)
         {
             if (disposing)

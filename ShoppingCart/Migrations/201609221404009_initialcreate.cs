@@ -3,7 +3,7 @@ namespace ShoppingApp.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class nullableDateTime : DbMigration
+    public partial class initialcreate : DbMigration
     {
         public override void Up()
         {
@@ -42,10 +42,11 @@ namespace ShoppingApp.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Address = c.String(),
-                        City = c.String(),
-                        State = c.String(),
-                        ZipCode = c.String(),
+                        Name = c.String(),
+                        Address = c.String(nullable: false),
+                        City = c.String(nullable: false),
+                        State = c.String(nullable: false),
+                        ZipCode = c.String(nullable: false),
                         Country = c.String(),
                         Phone = c.String(),
                         Total = c.Decimal(nullable: false, precision: 18, scale: 2),

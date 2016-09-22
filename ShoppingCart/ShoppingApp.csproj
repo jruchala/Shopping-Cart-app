@@ -206,9 +206,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201609191554236_nullableDateTime.cs" />
-    <Compile Include="Migrations\201609191554236_nullableDateTime.Designer.cs">
-      <DependentUpon>201609191554236_nullableDateTime.cs</DependentUpon>
+    <Compile Include="Migrations\201609221404009_initialcreate.cs" />
+    <Compile Include="Migrations\201609221404009_initialcreate.Designer.cs">
+      <DependentUpon>201609221404009_initialcreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -535,6 +535,7 @@
     <Content Include="Views\Shared\_CartTotal.cshtml" />
     <Content Include="Views\Shared\_AuthLayout.cshtml" />
     <Content Include="Views\Orders\Confirm.cshtml" />
+    <Content Include="Views\Shared\_ShoppingCartsPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -552,8 +553,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201609191554236_nullableDateTime.resx">
-      <DependentUpon>201609191554236_nullableDateTime.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201609221404009_initialcreate.resx">
+      <DependentUpon>201609221404009_initialcreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

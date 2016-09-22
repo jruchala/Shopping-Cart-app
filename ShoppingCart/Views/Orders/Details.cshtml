@@ -5,11 +5,13 @@
 }
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
+  
 }
 <h2>Details</h2>
 
 <div>
     <h4>Review your details and confirm your order</h4>
+
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -94,8 +96,8 @@
         </a>
     </div>
     
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) 
     @if (User.IsInRole("Admin")){
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink(" | Back to List", "Index")
     }
 </p>

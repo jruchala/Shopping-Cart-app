@@ -7,13 +7,13 @@ namespace ShoppingApp.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class nullableDateTime : IMigrationMetadata
+    public sealed partial class initialcreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(nullableDateTime));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initialcreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201609191554236_nullableDateTime"; }
+            get { return "201609221404009_initialcreate"; }
         }
         
         string IMigrationMetadata.Source
