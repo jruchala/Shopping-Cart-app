@@ -80,3 +80,6 @@ C:\Users\rucha\OneDrive\Documents\Visual Studio 2015\Projects\ShoppingApp\Shoppi
 C:\Users\rucha\OneDrive\Documents\Visual Studio 2015\Projects\ShoppingApp\ShoppingCart\obj\Release\ShoppingApp.csprojResolveAssemblyReference.cache
 C:\Users\rucha\OneDrive\Documents\Visual Studio 2015\Projects\ShoppingApp\ShoppingCart\obj\Release\ShoppingCart.dll
 C:\Users\rucha\OneDrive\Documents\Visual Studio 2015\Projects\ShoppingApp\ShoppingCart\obj\Release\ShoppingCart.pdb
+C:\Users\rucha\OneDrive\Documents\Visual Studio 2015\Projects\ShoppingApp\ShoppingCart\obj\Release\ShoppingApp.Migrations.initialcreate.resources
+C:\Users\rucha\OneDrive\Documents\Visual Studio 2015\Projects\ShoppingApp\ShoppingCart\obj\Release\ShoppingCart.Properties.Resources.resources
+C:\Users\rucha\OneDrive\Documents\Visual Studio 2015\Projects\ShoppingApp\ShoppingCart\obj\Release\ShoppingApp.csproj.GenerateResource.Cache

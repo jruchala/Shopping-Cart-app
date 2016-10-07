@@ -231,6 +231,15 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\flexslider.css" />
+    <Content Include="Content\images\uploads\abt-3.jpg" />
+    <Content Include="Content\images\uploads\c-1.jpg" />
+    <Content Include="Content\images\uploads\c-2.jpg" />
+    <Content Include="Content\images\uploads\c-3.jpg" />
+    <Content Include="Content\images\uploads\p-1.png" />
+    <Content Include="Content\images\uploads\p-2.png" />
+    <Content Include="Content\images\uploads\p-3.png" />
+    <Content Include="Content\images\uploads\p-4.png" />
+    <Content Include="Content\images\uploads\p-5.png" />
     <Content Include="Content\memenu.css" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
@@ -443,7 +452,7 @@
     <None Include="Views\Home\Checkout.cshtml" />
     <None Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\EmmetTest.cshtml" />
-    <None Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Content\images\11.png" />
     <Content Include="Content\images\abt-1.jpg" />
     <Content Include="Content\images\abt-2.jpg" />
@@ -544,7 +553,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\images\uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
